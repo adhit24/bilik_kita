@@ -64,7 +64,7 @@ export default function MenuHighlight() {
             </h2>
           </div>
           <a
-            href="#"
+            href="/menu"
             className="inline-flex items-center gap-2 text-[#8B6344] hover:text-[#C4775A] text-sm font-medium transition-colors group"
           >
             Lihat Menu Lengkap

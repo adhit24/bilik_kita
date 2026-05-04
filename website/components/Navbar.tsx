@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { label: "Tentang", href: "/#about" },
-  { label: "Menu", href: "/#menu" },
+  { label: "Menu", href: "/menu" },
   { label: "Event", href: "/#events" },
   { label: "Reservasi", href: "/reservasi" },
   { label: "Lokasi", href: "/#location" },
