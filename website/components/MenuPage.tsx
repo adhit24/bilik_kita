@@ -155,7 +155,7 @@ const MENU: MenuItem[] = [
     id: "s2", cat: "snack", name: "French Fries",
     desc: "Kentang goreng garing, pilihan saus: keju cheddar atau BBQ.",
     price: 22000,
-    img: "https://images.unsplash.com/photo-1576107232684-1279f57f29fc?w=600&q=80",
+    img: "https://images.pexels.com/photos/845847/pexels-photo-845847.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: "s3", cat: "snack", name: "Bruschetta",
@@ -167,7 +167,7 @@ const MENU: MenuItem[] = [
     id: "s4", cat: "snack", name: "Pisang Goreng Keju",
     desc: "Pisang raja, adonan renyah, keju cheddar meleleh di atasnya.",
     price: 22000,
-    img: "https://images.unsplash.com/photo-1574484284002-952d92a03a05?w=600&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pisang_goreng_fried_banana.JPG",
   },
   {
     id: "s5", cat: "snack", name: "Dimsum 6 pcs",
@@ -207,7 +207,7 @@ const PROMOS: PromoItem[] = [
     desc: "Dua kopi susu gula aren dan dua banana bread. Waktu terbaik untuk ngobrol.",
     includes: ["2 Kopi Susu Gula Aren", "2 Banana Bread"],
     originalPrice: 106000, price: 90000,
-    img: "https://images.unsplash.com/photo-1455619452474-d2be8b1b70cd?w=600&q=80",
+    img: "https://images.pexels.com/photos/14089301/pexels-photo-14089301.jpeg?auto=compress&cs=tinysrgb&w=600",
     validNote: "Berlaku 14.00 – 17.00 WIB",
     tagColor: "#C4775A",
   },
