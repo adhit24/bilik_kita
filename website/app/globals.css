@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand Color System — Bilik Kita "Digital Room" */
+  --color-linen:    #EDE0CC;
+  --color-espresso: #2E1F14;
+  --color-wood:     #8B6344;
+  --color-earth:    #C4775A;
+  --color-sage:     #7A8C6E;
+  --color-gold:     #F5C87A;
+  --color-roast:    #1C1209;
+  --color-stone:    #6B5744;
+  --color-cream:    #F7F0E3;
+
+  /* Typography */
+  --font-display: var(--font-playfair);
+  --font-sans:    var(--font-dm-sans);
+}
+
+/* === Base Reset === */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: #EDE0CC;
+  color: #1C1209;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* === Grain Texture Overlay === */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === Decorative Divider === */
+.divider-warm {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #8B6344, #F5C87A);
+  display: block;
+}
+
+/* === Custom Scrollbar === */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #EDE0CC; }
+::-webkit-scrollbar-thumb { background: #8B6344; border-radius: 3px; }
+
+/* === Experience Card Ratio === */
+.exp-card { aspect-ratio: 4 / 5; }
+@media (min-width: 1024px) { .exp-card { aspect-ratio: 3 / 4; } }
+
+/* === Detail Markers === */
+details > summary::-webkit-details-marker { display: none; }
+details > summary::marker { content: ""; }
+
+/* === Shimmer Text Effect === */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #F5C87A 0%, #fff 40%, #F5C87A 60%, #F5C87A 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* === Pulse Glow for CTAs === */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 99, 68, 0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(139, 99, 68, 0); }
+}
+.pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+/* === Horizontal Scroll Hide === */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* === Warm Image Filter === */
+.warm-image {
+  filter: sepia(0.08) saturate(0.9) brightness(0.95);
+}
+
+/* === Event Status Badges === */
+.badge-live {
+  background: linear-gradient(135deg, #C4775A, #e8956a);
+  color: #F7F0E3;
+}
+.badge-coming {
+  background: rgba(139, 99, 68, 0.3);
+  color: #F5C87A;
+  border: 1px solid rgba(245, 200, 122, 0.25);
+}
+.badge-full {
+  background: #6B5744;
+  color: #EDE0CC;
+  opacity: 0.6;
+}
+
+/* === Marquee / Ticker === */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* === Float Animation === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+/* === Fade Up (CSS-only, for non-JS fallback) === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+/* === Live Pulse Dot === */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+.dot-live { animation: live-pulse 1.4s ease-in-out infinite; }
+
+/* === Soft Glow Background === */
+.ambient-glow {
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(196, 119, 90, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
